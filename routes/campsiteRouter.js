@@ -152,7 +152,7 @@ campsiteRouter.route('/:campsiteId/comments/:commentId')
 .get((req, res, next) => {
     Campsite.findById(req.params.campsiteId)
     .then(campsite => {
-        if (campsite && campsite.comments.id(req.params.commentId)) {
+    if (campsite && campsite.comments.id(req.params.commentId)) {
             res.statusCode = 200;
             res.setHeader('Content-Type', 'application/json');
             res.json(campsite.comments.id(req.params.commentId))
